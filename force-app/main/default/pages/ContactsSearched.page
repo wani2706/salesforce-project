@@ -1,0 +1,23 @@
+<apex:page controller="SearchContactsController">
+
+<apex:form >
+<apex:inputText value="{!searchKey}" label="Type your search key here"></apex:inputText>
+<apex:commandButton value="Search" action="{!searchContacts}"></apex:commandButton>
+
+<apex:pageBlock >
+    <apex:pageBlockTable value="{!conList}" var="eachContact">
+        <apex:column headerValue="First Name">
+            <apex:outputText value="{!eachContact.FirstName}"/>
+        </apex:column>
+        <apex:column headerValue="Last Name">
+            <apex:outputText value="{!eachContact.LastName}"/>
+        </apex:column>
+        <apex:column headerValue="Email">
+            <apex:outputText value="{!eachContact.Email}"/>
+        </apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

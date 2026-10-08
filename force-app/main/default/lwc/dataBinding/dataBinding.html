@@ -1,0 +1,23 @@
+<template>
+    <lightning-card class='slds-card' title="One Way Data Binding">
+        Hello {userName}!<br>
+        Your Standing is {standing}<br>
+        Your Watch Time is {watchTime}<br>
+        Total Lessons Watched: {totalLessonsWatched}
+    </lightning-card>
+
+    <lightning-card class='slds-card' title="Two Way Data Binding">
+        <lightning-input class="slds-p-around_medium" type="text" label="Enter your value" value={userInput}
+            onchange={handleInputChange}></lightning-input>
+        <p class="slds-p-around_medium">This is your provided value : {userInput}</p>
+    </lightning-card>
+
+    <lightning-card class='slds-card' title="Getter and Setter">
+        <p class="slds-p-around_medium">{minutesWatched}</p>
+
+        <lightning-input type="number" onchange={handleWatchChange}></lightning-input>
+        <p class="slds-p-around_medium">After Setter is called: {minutesWatched}</p>
+
+    </lightning-card>
+
+</template>

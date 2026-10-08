@@ -1,0 +1,17 @@
+<aura:component controller="TaskCreatorController" access="global" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="subject" type="String"/>
+    <aura:attribute name="description" type="String"/>
+    <aura:attribute name="dueDate" type="Date"/>
+
+    <lightning:card title="Create Task Record" class="slds-m-around-medium">
+
+        <lightning:input value="{!v.subject}" name="subject" label="Enter your subject" class="slds-p-around-small"/>
+        <lightning:input value="{!v.description}" name="description" label="Enter your description" class="slds-p-around-small"/>
+        <lightning:input value="{!v.dueDate}" type="date" name="dueDate" label="Enter your due date" class="slds-p-around-small"/>
+
+        <aura:set attribute="actions">
+            <lightning:button label="Create" variant="brand" onclick="{!c.createTask}"/>
+        </aura:set>
+        
+    </lightning:card>
+</aura:component>
